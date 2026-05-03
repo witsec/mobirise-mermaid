@@ -1,0 +1,16 @@
+[
+    {
+        "name": "witsec-mermaid",
+        "priority": 3000,
+        "files": [
+            {
+                "src" : "witsec-mermaid/mermaid.min.js",
+                "publishOnly" : false
+            },
+            {
+                "src" : "witsec-mermaid/witsec-mermaid.js",
+                "publishOnly" : false
+            }
+        ]
+    }
+]

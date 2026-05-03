@@ -1,0 +1,64 @@
+<section class="witsec-mermaid" plugins="witsec-mermaid" data-bg-video="{{bg.type == 'video'&&bg.value.url}}" mbr-class="{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}">
+  <mbr-parameters>
+    <header>Create your own diagrams on the <a href="javascript:mbrApp.openUrl('https://mermaid.ai/live')">Mermaid website</a>. Then simple copy and paste the text below.</header>
+
+    <header>Size</header>
+    <input type="checkbox" title="Full Screen" name="fullScreen">
+    <input type="checkbox" title="Full Width" name="fullWidth" checked>
+    <input type="range" inline title="Top" name="paddingTop" min="0" max="10" step="1" value="2" condition="fullScreen == false">
+    <input type="range" inline title="Bottom" name="paddingBottom" min="0" max="10" step="1" value="2" condition="fullScreen == false">
+
+    <header>Show/Hide</header>
+    <input type="checkbox" title="Title" name="showTitle" checked>
+    <input type="checkbox" title="Text" name="showText" checked>
+
+    <header>Mermaid Options</header>
+    <textarea title="Code" name="mermaidCode">flowchart TD
+    A[Mobirise Mermaid Block] --&gt; B[Write diagram as text]
+    B --&gt; C{Mermaid renders it}
+
+    C --&gt; D[Flowcharts]
+    C --&gt; E[Diagrams]
+    C --&gt; F[Graphs]
+
+    D --&gt; G[Live preview in Mobirise]
+    E --&gt; G
+    F --&gt; G</textarea>
+    <select title="Align" name="mermaidAlign">
+      <option value="left">Left</option>
+      <option value="center" selected>Center</option>
+      <option value="right">Right</option>
+    </select>
+
+    <header>Background</header>
+    <fieldset type="background" name="bg" parallax>
+        <input type="image" title="Image" value="../_images/background1.jpg">
+        <input type="color" title="Color" value="#ffffff" selected>
+    </fieldset>
+
+    <input type="checkbox" title="Overlay" name="overlay" condition="bg.type !== 'color'" checked>
+    <input type="color" title="Overlay Color" name="overlayColor" value="#ffffff" condition="overlay && bg.type !== 'color'">
+    <input type="range" inline title="Opacity" name="overlayOpacity" min="0" max="1" step="0.1" value="0.7" condition="overlay && bg.type !== 'color'">
+  </mbr-parameters>
+
+  <div class="mbr-overlay" mbr-if="overlay && bg.type!== 'color'" mbr-style="{'opacity': overlayOpacity, 'background-color': overlayColor}"></div>
+
+  <div mbr-class="{'container': !fullWidth, 'container-fluid': fullWidth}">
+    <div class="row justify-content-center">
+        <div class="title col-md-12">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-4" mbr-if="showTitle" data-app-selector=".mbr-section-title" mbr-theme-style="display-5">
+                <b>Diagram anything with Mermaid</b></h3>
+            <p class="mbr-section-text align-center mbr-fonts-style mb-4" mbr-if="showText" data-app-selector=".mbr-section-text" mbr-theme-style="display-7">Go from text to a living diagram in seconds, right where you work.
+<br>Clear at a glance, quick to build, and made to evolve.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <input type="hidden" class="mermaidCode" value="{{mermaidCode}}">
+          <div class="mermaid"></div>
+        </div>
+    </div>
+
+  </div>
+</section>

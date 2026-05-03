@@ -1,0 +1,21 @@
+{
+    "name": "Mermaid v1",
+    "alias": "witsec-mermaid",
+    "version": 1,
+    "minAppVersion": "4.10.17",
+    "components" : [
+		{
+            "path":"components/witsec-mermaid",
+            "_group":"witsec",
+            "_isSecondary": true
+        }
+    ],
+    "plugins": [
+        "plugins"
+    ],
+    "ampCompatible": false,
+	"appScript": false,
+	"description":"This extension adds MermaidJS to your website. <a href='https://witsec.nl'>Learn more...</a>",
+    "largeCover": "cover.jpg",
+    "logo" : "thumbnail.jpg"
+}
